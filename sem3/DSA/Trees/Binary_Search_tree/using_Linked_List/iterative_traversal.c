@@ -18,6 +18,7 @@ int isempty()
     return 1;
   return 0;
 }
+
 void push(TN *temp)
 {
   stack[++top] = temp;
@@ -29,6 +30,7 @@ TN *pop()
   temp = stack[top--];
   return temp;
 }
+
 void inorder(TN *root)
 {
   top = -1;

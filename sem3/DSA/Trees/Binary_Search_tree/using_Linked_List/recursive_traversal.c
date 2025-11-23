@@ -6,7 +6,8 @@ typedef struct node {
   struct node *left, *right;
 } NODE;
 
-void Insert(NODE **root, int num) {
+void Insert(NODE **root, int num)
+{
   NODE *newnode = malloc(sizeof(NODE));
   newnode->data = num;
   newnode->left = newnode->right = NULL;
@@ -17,13 +18,15 @@ void Insert(NODE **root, int num) {
   }
 
   NODE *pre = NULL, *cur = *root;
-  while (cur != NULL) {
+  while (cur != NULL)
+  {
     pre = cur;
     if (num < cur->data)
       cur = cur->left;
     else if (num > cur->data)
       cur = cur->right;
-    else {
+    else 
+    {
       free(newnode);  // duplicates not allowed
       return;
     }
@@ -35,36 +38,42 @@ void Insert(NODE **root, int num) {
     pre->right = newnode;
 }
 
-void Preorder(NODE *root) {
+void Preorder(NODE *root) 
+{
   if (root == NULL) return;
   printf("%d\t", root->data);
   Preorder(root->left);
   Preorder(root->right);
 }
 
-void Inorder(NODE *root) {
+void Inorder(NODE *root) 
+{
   if (root == NULL) return;
   Inorder(root->left);
   printf("%d\t", root->data);
   Inorder(root->right);
 }
 
-void Postorder(NODE *root) {
+void Postorder(NODE *root) 
+{
   if (root == NULL) return;
   Postorder(root->left);
   Postorder(root->right);
   printf("%d\t", root->data);
 }
 
-void Delete(NODE **root, int key) {
-  if (*root == NULL) {
+void Delete(NODE **root, int key) 
+{
+  if (*root == NULL) 
+  {
     printf("\nEmpty tree\n");
     return;
   }
 
   NODE *cur = *root, *parent = NULL;
 
-  while (cur != NULL && cur->data != key) {
+  while (cur != NULL && cur->data != key) 
+  {
     parent = cur;
     if (key < cur->data)
       cur = cur->left;
@@ -81,10 +90,12 @@ void Delete(NODE **root, int key) {
   NODE *succParent = NULL, *succ = NULL;
 
   // Node with 2 children
-  if (cur->left != NULL && cur->right != NULL) {
+  if (cur->left != NULL && cur->right != NULL) 
+  {
     succParent = cur;
     succ = cur->right;
-    while (succ->left != NULL) {
+    while (succ->left != NULL) 
+    {
       succParent = succ;
       succ = succ->left;
     }
@@ -110,6 +121,7 @@ void Delete(NODE **root, int key) {
   free(cur);
   printf("\nNode %d deleted\n", x);
 }
+
 //WAF to find the max node:
 int MaxNode(NODE *root)
 {
@@ -129,6 +141,7 @@ int MaxNode(NODE *root)
   }
   return pre->data;
 }
+
 //waf to count the no. of nodes:
 int countNodes(NODE *root)
 {
@@ -149,6 +162,7 @@ int leafcount(NODE *root)
   r = leafcount(root->right);
   return l+r;
 }
+
 //waf to search for a particular element:
 int search(NODE *root,int key)
 {
@@ -157,9 +171,10 @@ int search(NODE *root,int key)
   if(root->data==key)
     return 1;
   if(key>root->data)
-   return search(root->right,key);
+  return search(root->right,key);
   return search(root->left,key);
 }
+
 //waf to calculate the height of the binary tree:
 int height(NODE *root)
 {
@@ -182,7 +197,8 @@ int main() {
     printf("\n1.Insert\n2.Preorder\n3.Inorder\n4.Postorder\n5.Delete\n6.Exit\n");
     scanf("%d", &ch);
 
-    switch (ch) {
+    switch (ch) 
+    {
       case 1:
         printf("Enter data: ");
         scanf("%d", &num);

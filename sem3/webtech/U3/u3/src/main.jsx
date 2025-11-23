@@ -1,5 +1,8 @@
-import React, { use } from 'react';
 import { createRoot } from 'react-dom/client';
+import ParentComponent from './ComplexComponents.jsx';
+import Result from "./KeysAndMap.jsx"
+import Result1 from "./KeysWithComplexComponents.jsx"
+import Result2 from "./EventHanding.jsx";
 import {useState,useEffect,useContext,createContext,useRef,useReducer} from 'react';
 import { BrowserRouter,Routes,Route,NavLink} from 'react-router-dom';
 
@@ -250,6 +253,7 @@ createRoot(document.getElementById('root')).render(<Counter />)
 */
 
 /*
+
 function ToggleText()
 {
   let isVisible = true;
@@ -326,7 +330,7 @@ createRoot(document.getElementById('root')).render(<Uncontrolledform />)
 */
 
 //React Router:
-
+/*
 function Home()
 {
   return <h2>This is Home Page</h2>
@@ -362,6 +366,24 @@ function App()
 }
 
 createRoot(document.getElementById('root')).render(<App />)
+*/
 
+function Meow()
+{
+  return(
+    <>
+    <div> 
+      <h1>Complex Components</h1>
+        <ParentComponent />
+        <Result />
+        <Result1 />
+        <Result2 />
+    </div>
+
+    </>
+  )
+}
+
+createRoot(document.getElementById('root')).render(<Meow />)
 
 

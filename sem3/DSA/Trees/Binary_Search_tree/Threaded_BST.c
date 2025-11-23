@@ -1,6 +1,9 @@
 //Inorder traversal of Binary search tree without recursion or stack using threaded bst.
 // 2 types: Single threaded( right threaded: Where all NULL right pointers are made to point to the inorder successor (if successor exists), left threaded:  Where all NULL left pointers are made to point to the inorder predecessor)  & double threaded(both left and right NULL pointers are made to point to inorder predecessor and inorder successor).
 
+
+//Right threaded
+
 #include<stdio.h>
 #include<stdlib.h>
 

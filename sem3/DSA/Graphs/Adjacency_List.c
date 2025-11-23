@@ -40,14 +40,16 @@ void display(NODE *a[], int n)
 void create_graph(NODE *a[], int n)
 {
     int i, j;
-    for (int i = 0; i < n; i++)
-        a[i] = NULL;
+    for (int k = 0; k < n; k++)
+        a[k] = NULL;
 
     while (1) {
         printf("Enter the source and destination (-1 -1 to stop): ");
         scanf("%d %d", &i, &j);
         if (i < 0 || j < 0 || i >= n || j >= n)
+        {     
             break;
+        }
         insert(a, i, j);
     }
 }
