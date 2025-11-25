@@ -16,10 +16,20 @@ NODE *getnode()
   NODE *temp = malloc(sizeof(NODE));
   for(int i = 0;i<255;i++)
   {
-    temp ->child[i] = NULL;
-    temp->EOW = 0;
+    temp->child[i] = NULL;
   }
+  temp->EOW = 0;
   return temp;
+}
+
+int isempty(NODE *root)
+{
+  for(int i = 0; i < 255; i++)
+  {
+    if(root->child[i] != NULL)
+      return 0;
+  }
+  return 1;
 }
 
 void insert(char *input,NODE *root)
@@ -28,7 +38,7 @@ void insert(char *input,NODE *root)
   int index;
   for(int i = 0;input[i]!='\0';i++)
   {
-    index = input[i]; //ascii value of each letter:
+    index = input[i];
     if(cur->child[index]==NULL)
     {
       cur->child[index] = getnode();
@@ -49,15 +59,15 @@ void display(NODE *root)
       if(cur->child[i]->EOW==1)
       {
         printf("\n");
-        for(int i = 0;i<length;i++)
+        for(int j = 0;j < length;j++)
         {
-          printf("%c",str[i]);
+          printf("%c",str[j]);
         }
       }
       display(cur->child[i]);
+      length--;
     }
   }
-  length--;
 }
 
 void display_prefix(NODE *root,char *key)
@@ -65,6 +75,7 @@ void display_prefix(NODE *root,char *key)
   char str1[100];
   NODE *cur = root;
   int index;
+  length = 0;
   for(int i = 0;key[i]!='\0';i++)
   {
     index = key[i];
@@ -85,21 +96,14 @@ void display_prefix(NODE *root,char *key)
     for(int j = 0; j<length;j++)
     {
       printf("%c",str1[j]);
-    } 
+    }
+  }
+  for(int i = 0;i<length;i++)
+  {
+    str[i] = str1[i];
   }
   display(cur);
 }
-//WAF to search for a word in a prefix tree;
-/*
-void search(NODE *root,char *key)
-{
-  length = 0;
-  char str1[100];
-  NODE *cur = root;
-  int index;
-
-
-}*/
 
 NODE *delete(NODE *root,char *key,int depth)
 {
@@ -118,7 +122,7 @@ NODE *delete(NODE *root,char *key,int depth)
       free(root);
       return NULL;
     }
-    return root.
+    return root;
   }
   int index = key[depth];
   root->child[index] = delete(root->child[index],key,depth+1);
@@ -127,12 +131,13 @@ NODE *delete(NODE *root,char *key,int depth)
       free(root);
       return NULL;
   }
+  return root;
 }
 
 int main()
 {
   NODE *root = getnode();
-  int ch,depth=0,status;
+  int ch,depth=0;
   char input[100],prefix[100],key[100];
   while(1)
   {
@@ -140,7 +145,8 @@ int main()
     scanf("%d",&ch);
     switch (ch)
     {
-      case 1: printf("Enter the word: ");
+      case 1: 
+        printf("Enter the word: ");
         scanf("%s",input);
         insert(input,root);
         break;
@@ -150,15 +156,14 @@ int main()
         break;
 
       case 3:
-        length = 0;
         printf("Enter the prefix: ");
         scanf("%s",prefix);
-        display_prefix(root,key);
+        display_prefix(root,prefix);
         break;
 
       case 4:
         printf("Enter the work to be deleted: ");
-        scanf("%s",&key);
+        scanf("%s",key);
         root = delete(root,key,depth);
         length = 0;
         printf("\nUpdated trie: \n");
@@ -166,5 +171,11 @@ int main()
         break;
     }
   }
-
 }
+//WAF to search for a word in a prefix tree;
+/*
+
+
+}*/
+
+
