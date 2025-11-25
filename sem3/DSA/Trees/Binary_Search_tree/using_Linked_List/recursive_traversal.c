@@ -171,7 +171,9 @@ int search(NODE *root,int key)
   if(root->data==key)
     return 1;
   if(key>root->data)
-  return search(root->right,key);
+  { 
+    return search(root->right,key);
+  }
   return search(root->left,key);
 }
 
