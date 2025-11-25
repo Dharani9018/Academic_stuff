@@ -1,5 +1,5 @@
 ## Unit 3
-### [BST](sem3/DSA/Trees/Binary_Search_tree)
+### [BST](https://github.com/Dharani9018/Code_written_at_uni/tree/main/sem3/DSA/Trees/Binary_Search_tree)
 #### [UsingArray]()
 #### [Using Linked list]()
 ##### [iterative traversal]()
@@ -21,6 +21,7 @@
 #### [Double hasing]()
 #### [Chaining]()
 #### [rehashing]()
+
 
 
 
