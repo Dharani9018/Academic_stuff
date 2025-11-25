@@ -14,13 +14,14 @@
 #### [Adjacency Matrix](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Graphs/Adjacency_Matrix.c)
 
 ## Unit 4
-### [Tire](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Trie/adt.c)
+### [Trie](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Trie/adt.c)
 ### [Hashing](https://github.com/Dharani9018/Code_written_at_uni/tree/main/sem3/DSA/Hashing)
 #### [Linear Probing](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Hashing/Linear_Probing.c)
 #### [Quadratic Probing](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Hashing/Quadratic_Probing.c)
 #### [Double hasing](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Hashing/Double_Hashing.c)
 #### [Chaining](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Hashing/Chaining.c)
 #### [rehashing](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Hashing/rehashing.c)
+
 
 
 
