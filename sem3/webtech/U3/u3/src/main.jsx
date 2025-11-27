@@ -3,6 +3,8 @@ import ParentComponent from './ComplexComponents.jsx';
 import Result from "./KeysAndMap.jsx"
 import Result1 from "./KeysWithComplexComponents.jsx"
 import Result2 from "./EventHanding.jsx";
+import Hooks from "./ReactHooks.jsx";
+
 import {useState,useEffect,useContext,createContext,useRef,useReducer} from 'react';
 import { BrowserRouter,Routes,Route,NavLink} from 'react-router-dom';
 
@@ -378,6 +380,8 @@ function Meow()
         <Result />
         <Result1 />
         <Result2 />
+      <h1>React Hooks</h1>
+        <Hooks />
     </div>
 
     </>

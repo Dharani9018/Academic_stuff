@@ -63,12 +63,13 @@ void creategraph(NODE *a[], int n) {
     }
 }
 
-void bfs(NODE *a[], int v) {
+int bfs(NODE *a[], int v,int n) {
     NODE *q = NULL, *list;
     for (int i = 0; i < MAX; i++)
         visited[i] = 0;
 
     visited[v] = 1;
+    int count = 1;
     q = insertrear(v, q);
     printf("BFS traversal: ");
 
@@ -77,16 +78,19 @@ void bfs(NODE *a[], int v) {
         printf("%d ", u);
         q = deletefront(q);
         list = a[u];
-        while (list != NULL) {
+        while (list != NULL) 
+        {
             int w = list->data;
             if (!visited[w]) {
                 visited[w] = 1;
                 q = insertrear(w, q);
+                count++;
             }
             list = list->link;
         }
     }
     printf("\n");
+    return count==n; //returns 1 if the whole graph is connected.
 }
 
 void dfs(NODE *a[], int v) {
@@ -102,7 +106,8 @@ void dfs(NODE *a[], int v) {
     }
 }
 
-int main() {
+int main() 
+{
     NODE *a[MAX];
     int n, v;
     printf("Enter number of vertices: ");
@@ -119,7 +124,7 @@ int main() {
         visited[i] = 0; // reset visited before DFS
 
     printf("\nDFS\n");
-    dfs(a, v);
+    dfs(a,v,n);
     printf("\n");
 
     return 0;

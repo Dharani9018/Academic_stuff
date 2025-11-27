@@ -6,6 +6,7 @@
 const http = require("http") //importing
 
 //creating a server.
+
 /*
 http.createServer(function(req,res){
     res.writeHead(200,{"content-type":"text/html"})
@@ -25,4 +26,4 @@ http.createServer(function(req,res)
     var txt = q.year+" "+q.month;
     res.end(txt)
 }).listen(3001);
-console.log("Server is running")
+console.log("Server is running") 

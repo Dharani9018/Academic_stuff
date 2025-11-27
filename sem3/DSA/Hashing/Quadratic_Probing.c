@@ -24,6 +24,7 @@ void init()
     array[i].data = NULL;
   }
 }
+
 int hash_fun(int key)
 {
   return key%MAX;

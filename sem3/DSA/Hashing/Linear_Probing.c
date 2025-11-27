@@ -108,6 +108,12 @@ int main()
 {
   int key,value,choice;
   array = malloc(sizeof(hash_table)*MAX);
+  for(int i = 0;i<MAX;i++)
+  {
+    a[i].data=NULL;
+    a[i].flag = 0;
+  }
+
   while(1)
   {
     printf("\n1.Insert\n2.Display\n3.Search\n4.remove_key\n");
