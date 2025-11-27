@@ -33,7 +33,7 @@ int indegree(int graph[Max_vertices][Max_vertices],int v,int n)
   int count = 0;
   for(int i = 0;i<n;i++)
   {
-    if(j==v && graph[i][v]==1)
+    if(graph[i][v]==1)
     {
       count++;
     }
