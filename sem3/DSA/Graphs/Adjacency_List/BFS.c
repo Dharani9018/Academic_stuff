@@ -92,20 +92,6 @@ int bfs(NODE *a[], int v,int n) {
     printf("\n");
     return count==n; //returns 1 if the whole graph is connected.
 }
-
-void dfs(NODE *a[], int v) {
-    NODE *temp;
-    visited[v] = 1;
-    printf("%d ", v);
-
-    temp = a[v];
-    while (temp != NULL) {
-        if (!visited[temp->data])
-            dfs(a, temp->data);
-        temp = temp->link;
-    }
-}
-
 int main() 
 {
     NODE *a[MAX];
@@ -114,17 +100,8 @@ int main()
     scanf("%d", &n);
     creategraph(a, n);
 
-    printf("Enter starting vertex: ");
-    scanf("%d", &v);
-
-    printf("\nBFS\n");
-    bfs(a, v);
-
     for (int i = 0; i < MAX; i++)
-        visited[i] = 0; // reset visited before DFS
-
-    printf("\nDFS\n");
-    dfs(a,v,n);
+        visited[i] = 0;
     printf("\n");
 
     return 0;
