@@ -2,15 +2,17 @@
 #include <stdlib.h>
 #define MAX 50
 
-int visited[MAX] = {0};
+int n = 0;
 
-typedef struct node {
+typedef struct node 
+{
     int data;
     struct node *link;
 } NODE;
 
 
-NODE *insertrear(int v, NODE *q) {
+NODE *insertrear(int v, NODE *q) 
+{
     NODE *newnode = malloc(sizeof(NODE));
     newnode->link = NULL;
     newnode->data = v;
@@ -22,7 +24,8 @@ NODE *insertrear(int v, NODE *q) {
     return q;
 }
 
-NODE *deletefront(NODE *q) {
+NODE *deletefront(NODE *q) 
+{
     if (q == NULL) return NULL;
     NODE *temp = q;
     q = q->link;
@@ -31,7 +34,8 @@ NODE *deletefront(NODE *q) {
 }
 
 // Graph creation
-void insert(NODE *a[], int s, int d) {
+void insert(NODE *a[], int s, int d) 
+{
     NODE *newnode = malloc(sizeof(NODE));
     newnode->data = d;
     newnode->link = NULL;
@@ -45,7 +49,8 @@ void insert(NODE *a[], int s, int d) {
     cur->link = newnode;
 }
 
-void creategraph(NODE *a[], int n) {
+void creategraph(NODE *a[]) 
+{
     int s, d;
     for (int i = 0; i < n; i++)
         a[i] = NULL;
@@ -63,13 +68,11 @@ void creategraph(NODE *a[], int n) {
     }
 }
 
-int bfs(NODE *a[], int v,int n) {
+void bfs(NODE *a[], int v) 
+{
     NODE *q = NULL, *list;
-    for (int i = 0; i < MAX; i++)
-        visited[i] = 0;
-
+    int visited[MAX] = {0};
     visited[v] = 1;
-    int count = 1;
     q = insertrear(v, q);
     printf("BFS traversal: ");
 
@@ -84,26 +87,119 @@ int bfs(NODE *a[], int v,int n) {
             if (!visited[w]) {
                 visited[w] = 1;
                 q = insertrear(w, q);
-                count++;
             }
             list = list->link;
         }
     }
     printf("\n");
-    return count==n; //returns 1 if the whole graph is connected.
+    return;
+}
+
+void is_connected(NODE *a[])
+{
+    int queue[MAX],f=0,r=0,count=0,visited[MAX]={0},start=0;
+    visited[start]=1;
+    queue[r++] = start;
+    while(f<r)
+    {
+        int u = queue[f++];
+        count++;
+        NODE *temp = a[u];
+        while(temp!=NULL)
+        {
+            if(!visited[temp->data])
+            {
+                visited[temp->data] =1;
+                queue[r++] = temp->data;
+            }
+            temp = temp->link;
+        }
+    }
+    if(count==n)
+    {
+        printf("\nConnected\n");
+        return;
+    }
+    printf("\nNOT Connected\n");
+    return;
+}
+
+//only for directed graphs, kahn's algorithm
+int isCyclic(NODE *a[])
+{
+    int indegree[MAX] = {0};
+    int queue[MAX],f=0,r=0,count=0;
+    //compute indegree:
+
+    for(int i = 0;i<n;i++)
+    {
+        NODE *temp = a[i];
+        while(temp!=NULL)
+        {
+            indegree[temp->data]++;
+            temp = temp->link;
+        }
+    }
+    for(int i = 0;i<n;i++)
+    {
+        if(indegree[i]==0)
+        {
+            queue[r++] = i;
+        }
+    }
+
+    //Bfs:
+    while(f<r)
+    {
+        int u = queue[f++];
+        count++;
+        NODE *temp = a[u];
+        while(temp!=NULL)
+        {
+            indegree[temp->data]--;
+            if(indegree[temp->data]==0)
+            {
+                queue[r++] = temp->data;
+            }
+            temp = temp->link;
+        }
+    }
+    return count!=n;
 }
 int main() 
 {
     NODE *a[MAX];
-    int n, v;
+    int s,d,ch,v;
     printf("Enter number of vertices: ");
     scanf("%d", &n);
-    creategraph(a, n);
+    creategraph(a);
 
-    for (int i = 0; i < MAX; i++)
-        visited[i] = 0;
-    printf("\n");
-
+    while(1)
+    {
+        printf("\n1.BFS Traversal\n2.Check Connectivity\n3.Check cyclic\n");
+        scanf("%d",&ch);
+        switch (ch)
+        {
+            case 1:
+                printf("Enter vertex to start BFS");
+                scanf("%d",&v);
+                bfs(a,v);
+                break;
+            case 2:
+                is_connected(a);
+                break;
+            case 3:
+                if(isCyclic(a))
+                {
+                    printf("Cycle detectedn");
+                }
+                else
+                {
+                    printf("NO cycle found\n");
+                }
+                break;
+        }
+    }
     return 0;
 }
 
