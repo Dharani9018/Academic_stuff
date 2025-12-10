@@ -43,7 +43,7 @@ void insert(int key, int value)
       return;
     }
   }
-  array[i].flag = 1;
+  array[i].flag = 1; 
   array[i].data = ele;
   printf("%d inserted at index %d",key,i);
   return;

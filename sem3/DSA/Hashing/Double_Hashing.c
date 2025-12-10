@@ -51,7 +51,7 @@ void insert(int key,int value)
       array[i].data->value = value;
       return;
     }
-    i = (i + (h*i2)%MAX);
+    i = (i + (h*i2))%MAX);
     h++;
     if(index==i)
     {
@@ -114,6 +114,7 @@ void remove_key(int key)
     if(array[i].data->key==key)
     {
       array[i].flag=2;
+      free(array[i].data);
       array[i].data=NULL;
       return;
     }
