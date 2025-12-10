@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define MAX 25
 
-//prelocate up
+//perlocate up
 void siftUp(int *h,int *size,int value)
 {
   if(*size>=MAX)
