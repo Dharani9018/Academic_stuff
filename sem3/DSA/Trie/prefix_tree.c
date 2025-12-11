@@ -105,6 +105,25 @@ void display_prefix(NODE *root,char *key)
   display(cur);
 }
 
+int search(NODE *root, char *key)
+{
+    NODE *cur = root;
+    int index;
+
+    for (int i = 0; key[i] != '\0'; i++)
+    {
+        index = key[i];
+
+        if (cur->child[index] == NULL)
+            return 0;      // word definitely not present
+
+        cur = cur->child[index];
+    }
+
+    // Only return true if the last node is marked EOW
+    return (cur->EOW == 1);
+}
+
 NODE *delete(NODE *root,char *key,int depth)
 {
   if(root==NULL)
@@ -141,7 +160,7 @@ int main()
   char input[100],prefix[100],key[100];
   while(1)
   {
-    printf("\n1.Insert\n2.Display\n3.display all the words with same prefix\n4.Delete a word\n");
+    printf("\n1.Insert\n2.Display\n3.display all the words with same prefix\n4.Delete a word\n5.Search for a word\n");
     scanf("%d",&ch);
     switch (ch)
     {
@@ -169,13 +188,19 @@ int main()
         printf("\nUpdated trie: \n");
         display(root);
         break;
+
+      case 5:
+        printf("Enter the word to search: ");
+        scanf("%s", key);
+        if (search(root, key))
+            printf("Word FOUND\n");
+        else
+
+            printf("Word NOT FOUND\n");
+        break;
+
+        
     }
   }
 }
-//WAF to search for a word in a prefix tree;
-/*
-
-
-}*/
-
 

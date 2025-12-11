@@ -3,7 +3,7 @@
 #define MAX 50
 int a[MAX][MAX];
 int n;
-int path[MAX];
+int inStack[MAX];
 int p;
 
 
@@ -49,15 +49,15 @@ void dfs(int v,int *visited)
 int dfs_cycle(int v,int *visited)
 {
     visited[v] = 1;
-    path[v] = 1;
+    inStack[v] = 1;
     for(int u = 0;u<n;u++)
     {
-        if(a[v][u]==1 && ((!visited[u] && dfs_cycle(u,visited)) || path[u]))
+        if(a[v][u]==1 && ((!visited[u] && dfs_cycle(u,visited)) || inStack[u]))
         {
             return 1;
         }
     }
-    path[v] = 0;
+    inStack[v] = 0;
     return 0;
 }
 
@@ -66,7 +66,7 @@ int isCyclic()
     int visited[MAX] = {0};
     for(int i=0;i<n;i++)
     {
-        path[i] = 0;
+        inStack[i] = 0;
     }
     for(int i = 0;i<n;i++)
     {
@@ -118,16 +118,16 @@ int isCyclic()
 }
 */
 
-//Path finding:
+//path finding:
 void printall(int u,int d,int *visited)
 {
   visited[u] = 1;
-  path[p++] = u;
+  inStack[p++] = u;
   if(u==d)
   {
     for(int i =0 ;i<p;i++)
     {
-      printf("%d\t",path[i]);
+      printf("%d\t",inStack[i]);
     }
     printf("\n");
   }
@@ -150,11 +150,10 @@ void printpath(int s,int d)
   int visited[MAX]={0};
   for(int i = 0;i<n;i++)
   {
-    path[i] = 0;
+    inStack[i] = 0;
   }
   p = 0;
   printall(s,d,visited);
-
 }
 
 void is_connected()
@@ -182,7 +181,7 @@ int main()
   create_matrix();
   while(1)
   {
-    printf("\n1.Cycle Detection\n2.Connectivity\n3.Path finding\n4.Display");
+    printf("\n1.Cycle Detection\n2.Connectivity\n3.inStack finding\n4.Display");
     scanf("%d",&ch);
     switch (ch)
     {

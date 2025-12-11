@@ -71,7 +71,7 @@
 
 ## Unit 4
 
-### **[Trie](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Trie/adt.c)**
+### **[Trie](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Trie/prefix_tree.c)**
 
 ### Hashing
 
