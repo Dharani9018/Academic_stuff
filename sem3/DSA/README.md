@@ -33,6 +33,7 @@
 * **Using Linked List**
 
   * **[Simple Queue](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Queue/Using_Linked_List/Simple_Queue.c)**
+  * **[Circular_Queue](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Queue/Using_Linked_List/Circular_Queue.c)**
 * **[Application – Josephus Problem](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Queue/Applications/Josephus_problem.c)**
 
 ---
@@ -80,6 +81,7 @@
 * **[Double Hashing](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Hashing/Double_Hashing.c)**
 * **[Chaining](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Hashing/Chaining.c)**
 * **[Rehashing](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Hashing/rehashing.c)**
+
 
 
 
