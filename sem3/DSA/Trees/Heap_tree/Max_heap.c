@@ -1,7 +1,8 @@
 #include <stdio.h>
 #define MAX 25
 
-void top_down(int *h,int *size,int value)
+//perlocate up
+void siftUp(int *h,int *size,int value)
 {
   if(*size>=MAX)
   {
@@ -29,8 +30,8 @@ void top_down(int *h,int *size,int value)
   }
   return;
 }
-//Bottom-down approach:
 
+//heapify down
 void heapify(int *h,int n)
 {
   int i = 0,j,key;
@@ -100,7 +101,7 @@ int main()
       {
         case 1:printf("Enter the Value: ");
           scanf("%d",&value);
-          top_down(h,&size,value);
+          siftUp(h,&size,value);
           break;
 
         case 2:

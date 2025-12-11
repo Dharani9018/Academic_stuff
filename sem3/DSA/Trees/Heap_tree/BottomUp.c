@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-//building max heap:
+//building max heap--> heapify down!!
 void bottom_up_heap(int *h,int n)
 {
     int i, j, k ,key;
@@ -58,3 +58,4 @@ int main()
     printf("\n");
     return 0;
 }
+

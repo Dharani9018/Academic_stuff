@@ -53,7 +53,7 @@
 
 ### Heap Tree
 
-* **[Top-Down Heap](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Trees/Heap_tree/TopDown.c)**
+* **[sift up(after insertion) and heapify down(after detion of max](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Trees/Heap_tree/Max_heap.c)**
 * **[Bottom-Up Heap](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Trees/Heap_tree/BottomUp.c)**
 
 ### Graphs
@@ -80,4 +80,6 @@
 * **[Double Hashing](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Hashing/Double_Hashing.c)**
 * **[Chaining](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Hashing/Chaining.c)**
 * **[Rehashing](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Hashing/rehashing.c)**
+
+
 
