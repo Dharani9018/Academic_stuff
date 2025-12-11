@@ -42,9 +42,9 @@
 ### BST
 
 * **[Using Array](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Trees/Binary_Search_tree/using_array.c)**
-* **[Using Linked List](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Trees/Binary_Search_tree/using_array.c)**
+* **[Using Linked List](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Trees/Binary_Search_tree/using_Linked_List)**
 
-  * **[Iterative Traversal](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Trees/Binary_Search_tree/using_Linked_List/iterative_traversal.c)**
+  * **[Iterative Traversal,Max Node,node count,leaf count,height](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Trees/Binary_Search_tree/using_Linked_List/iterative_traversal.c)**
   * **[Recursive Traversal](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Trees/Binary_Search_tree/using_Linked_List/recursive_traversal.c)**
 
 ### **[Expression Tree](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Trees/expression_tree.c)**
@@ -53,7 +53,7 @@
 
 ### Heap Tree
 
-* **[sift up(after insertion) and heapify down(after detion of max](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Trees/Heap_tree/Max_heap.c)**
+* **[sift up(after insertion) and heapify down(after detion of max)](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Trees/Heap_tree/Max_heap.c)**
 * **[Bottom-Up Heap](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Trees/Heap_tree/BottomUp.c)**
 
 ### Graphs
@@ -80,6 +80,8 @@
 * **[Double Hashing](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Hashing/Double_Hashing.c)**
 * **[Chaining](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Hashing/Chaining.c)**
 * **[Rehashing](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Hashing/rehashing.c)**
+
+
 
 
 
