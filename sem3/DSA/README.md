@@ -42,7 +42,7 @@
 ### BST
 
 * **[Using Array](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Trees/Binary_Search_tree/using_array.c)**
-* **[Using Linked List](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Trees/Binary_Search_tree/using_array.c)**
+* **[Using Linked List](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Trees/Binary_Search_tree/using_Linked_List)**
 
   * **[Iterative Traversal](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Trees/Binary_Search_tree/using_Linked_List/iterative_traversal.c)**
   * **[Recursive Traversal](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Trees/Binary_Search_tree/using_Linked_List/recursive_traversal.c)**
@@ -80,6 +80,7 @@
 * **[Double Hashing](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Hashing/Double_Hashing.c)**
 * **[Chaining](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Hashing/Chaining.c)**
 * **[Rehashing](https://github.com/Dharani9018/Code_written_at_uni/blob/main/sem3/DSA/Hashing/rehashing.c)**
+
 
 
 
