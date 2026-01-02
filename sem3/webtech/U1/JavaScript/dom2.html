@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>DOM Manipulation</title>
-    <script>
+</head>
+<body onload = "init()">
+    <p>Subjects</p>
+    <ul>
+        <li>Data Structure </li>
+        <li class="g1">Web Technologies</li>
+        <li class="g1">Data Science</li>   
+    </ul>
+        <script>
         function init()
         {
          var x =  document.querySelector("p")
@@ -34,13 +42,5 @@
          ul1.replaceChild(x,ul1.children[1]);
         }
     </script>
-</head>
-<body onload = "init()">
-    <p>Subjects</p>
-    <ul>
-        <li>Data Structure </li>
-        <li class="g1">Web Technologies</li>
-        <li class="g1">Data Science</li>   
-    </ul>
 </body>
 </html>

@@ -33,5 +33,30 @@
         <li>Dog</li>
         <li>Rabbit</li>
     </ul>
+    <input type="text" id="string" oninput="counte()"/>
+    <p id="count">Count: 0</p>
+    <script>
+        
+        function counte()
+        {
+            let count = 0;
+            let text = document.getElementById("string").value;
+            for(let i of text)
+        {
+            if(i==='e')
+            {
+             count++;
+            }
+        }
+        document.getElementById("count").innerText = "Count: "+count;
+    
+        }
+        let text = "hello World"
+        let x = document.createElement("div")
+        x.textContent = text;
+        const container = document.getElementById("count")
+        container.appendChild(x)
+        </script>
+        
 </body>
 </html>
