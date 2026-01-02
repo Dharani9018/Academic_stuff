@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <title>CSS Position Demo</title>
   <style>
+    /*
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      height: 2000px; /* to allow scrolling */
+      height: 2000px; 
     }
 
     .container {
@@ -15,7 +16,7 @@
       margin: 20px;
       padding: 20px;
       height: 300px;
-      position: relative; /* reference for absolute children */
+      position: relative; 
     }
 
     .box {
@@ -60,9 +61,48 @@
       position: sticky;
       top: 0;
     }
+      */
+  </style>
+
+  <style>
+    /*with static*/
+    /*
+    .box-orange{
+      background: orange;
+      height: 100px;
+      width:100px;
+    }*/
+    /*
+    .box-orange{
+      position:relative;
+      background: orange;
+      height: 100px;
+      width:100px;
+    top:100px;
+    left:102px;
+  }*/
+    /*
+      .box-orange{
+      position:absolute;
+      background: orange;
+      height: 100px;
+      width:100px;
+    }*/
+    
+    .box-blue{
+      background: blue;
+      height:100px;
+      width:100px;
+      position: static;}  /*doesnt make any difference*/
+    /*with relative*/
+
+
   </style>
 </head>
 <body>
+  <div class="box-orange">Im orange</div>
+  <div class="box-blue">Im blue</div>
+  <!-- 
   <h2>CSS Position Example</h2>
   <p>Scroll down to see how <b>fixed</b> and <b>sticky</b> behave.</p>
 
@@ -77,5 +117,6 @@
   <p>Notice how the <span style="color:red;font-weight:bold;">Fixed</span> box stays at the corner.</p>
 
   <div class="box fixed">Fixed</div>
-</body>
+</body> 
+-->
 </html>

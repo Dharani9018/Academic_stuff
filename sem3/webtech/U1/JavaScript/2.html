@@ -18,10 +18,10 @@
     }
   };
 
-  // ✅ Method call: works because `this` = object before the dot
+  //  Method call: works because `this` = object before the dot
   person.sayName(); // "pranav"
 
-  // ❌ Copying into variable loses the object binding
+  //  Copying into variable loses the object binding
   let say = person.sayName;
   say();
   /*
@@ -39,7 +39,8 @@
     name: "anu",
 
     // Regular function → binds `this` dynamically at call time
-    sayName: function () {
+    sayName: function () 
+    {
       console.log("Regular function -> this.name:", this.name);
     },
 
@@ -50,10 +51,10 @@
     }
   };
 
-  // ✅ Regular method call
+  //  Regular method call
   obj.sayName(); // "anu"
 
-  // ❌ Arrow method call (still global `this`)
+  //  Arrow method call (still global `this`)
   obj.sayNameArrow(); // "" (in browser global scope, `window.name` is "")
 
   console.log("\n===== Example 3: Detaching Methods =====");
