@@ -1,0 +1,8 @@
+MOV R0,#1
+ADD R1,R0,R0,LSL #6
+ADD R1,R1,R0,LSL #3
+ADD R0,R1,R0,LSL #1
+
+
+
+
