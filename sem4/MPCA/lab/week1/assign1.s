@@ -1,0 +1,23 @@
+.DATA
+A:.WORD 1,2,3,4,5,6,7,8,9,10
+B:.WORD 0
+.TEXT
+	LDR R0,=A
+	MOV R1,#0
+	MOV R2,#0
+	MOV R5,#0
+	LOOP:
+		LDR R3,[R0,R5]
+		ANDS R4,R3,#0x01
+		ADDEQ R1,R1,R3
+		ADD R2,R2,#1
+		ADD R5,R5,#4
+		CMP R2,#10
+		BNE LOOP
+	LDR R0,=B
+	STR R1,[R0]
+	SWI 0X11
+	
+		 
+		
+	
