@@ -1,0 +1,26 @@
+.DATA 
+    X:.WORD 10,20,30,40,50,60,70,80,90,100,200,300,400,500,600,700
+    Y:.WORD 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+.TEXT
+    LDR R0,=X
+    LDR R1,=Y
+    MOV R2,#16
+    
+LOOP1:
+    CMP R2,#6
+    BLT REMAINDER
+    LDMIA R0!,{R3,R4,R5,R6,R7,R8}
+    STMIA R1!,{R3,R4,R5,R6,R7,R8}
+    SUB R2,R2,#6
+    B LOOP1
+    
+REMAINDER:
+    CMP R2,#0
+    BEQ EXIT
+    LDMIA R0!,{R3}
+    STMIA R1!,{R3}
+    SUB R2,R2,#1
+    B REMAINDER
+    
+EXIT:
+    SWI 0X11
