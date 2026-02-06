@@ -1,18 +1,6 @@
-@Based on value of number in r0
-
-.TEXT
-LDR R0,=0X10
-MOV R0,#-1
-CMP R0,#0
-BEQ ZERO
-BGT POS
-
-NEG: MOV R1,#3
-B EXIT
-
-ZERO: MOV R1,#1
-B EXIT
-
-POS: MOV R1,#2
-
-EXIT:SWI 0X011
+mov r0, #0xFFFFFFFF @r0=r1=r2=r4= maximum unsigned 32bit value(32 ones) 1111..
+mov r1, #0xFFFFFFFF 
+mov r2, #0xFFFFFFFF
+mov r3, #0xFFFFFFFF
+ADDS r4, r0,r2  
+ADC r5, r1,r3 
