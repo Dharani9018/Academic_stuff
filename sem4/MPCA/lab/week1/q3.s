@@ -1,7 +1,0 @@
-MOV R0,#25
-MOV R1,#25
-LOOP:
-    CMP R0,R1
-    SUBGT R0,R0,R1
-    SUBLT R1,R1,R0
-    BNE LOOP

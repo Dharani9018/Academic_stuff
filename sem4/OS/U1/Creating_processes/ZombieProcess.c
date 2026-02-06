@@ -6,7 +6,7 @@ int main()
   pid_t pid = fork();
   if(pid>0)
   {  
-    sleep(15);
+    sleep(5);
     printf("In parent\n");
   }
   else if(pid==0)

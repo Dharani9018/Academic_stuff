@@ -1,0 +1,4 @@
+.TEXT
+MOV R0, #2
+RSB R1, R0, #0
+SWI 0X11
