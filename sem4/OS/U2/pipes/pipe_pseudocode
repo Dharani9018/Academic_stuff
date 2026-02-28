@@ -1,0 +1,26 @@
+function sys_pipe(user_fd_array):
+{ 
+
+    # allocate pipe structure in kernel
+    pipe_obj = new pipe_structure
+
+    pipe_obj.buffer = allocate_buffer()
+    pipe_obj.read_pos = 0
+    pipe_obj.write_pos = 0
+    pipe_obj.readers = 1
+    pipe_obj.writers = 1
+
+    # allocate two file descriptors in current process
+    fd_read  = allocate_fd(current_process)
+    fd_write = allocate_fd(current_process)
+
+    # connect descriptors to pipe
+    current_process.fd_table[fd_read]  -> pipe_obj (read end)
+    current_process.fd_table[fd_write] -> pipe_obj (write end)
+
+    # return numbers to user
+    user_fd_array[0] = fd_read
+    user_fd_array[1] = fd_write
+
+    return 0
+}

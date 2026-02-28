@@ -7,7 +7,7 @@ int main()
   printf("Using execl() to execute `prog1`: \n");
   if(fork()==0)
   {
-    execl("./meow","meow",NULL);
+    execl("./meow","meow",NULL); //arguments passed list-wise
     perror("execl failed");
     exit(1);
   }

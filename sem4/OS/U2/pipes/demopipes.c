@@ -23,7 +23,7 @@ int main()
     return 1;
   }
 
-  //fork a child process
+  
   pid = fork();
 
   if(pid > 0)

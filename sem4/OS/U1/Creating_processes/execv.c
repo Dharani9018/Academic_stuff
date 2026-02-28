@@ -8,7 +8,9 @@ int main()
   char *args[] = {"meow",NULL};
   if(fork()==0)
   {
-    execv("./meow",args);
+    //exec -> overwrites the child's memory with the program to execute the executable file(here-> meow)
+    //v->vector : The arguments to the program are passed as an array (vector) of pointers.
+    execv("./meow",args); //path to the executable execv("path",args)
     perror("exec failed");
     exit(1);
   }

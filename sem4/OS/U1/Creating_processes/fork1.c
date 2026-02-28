@@ -21,6 +21,5 @@ int main()
   else
   {
     printf("Fork failed\n");
-
   }
 }
