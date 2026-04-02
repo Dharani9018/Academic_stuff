@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 MOV R0,#5
 MOV R1,#1
 FACT:
@@ -6,3 +7,13 @@ FACT:
 	BNE FACT
 SWI 0X11
 
+=======
+MOV R0,#5
+MOV R1,#1
+FACT:
+	MUL R1,R0,R1
+	SUBS R0,R0,#1
+	BNE FACT
+SWI 0X11
+
+>>>>>>> 981fe96f5bd74891b42b1f36e81e31547d541f42

@@ -7,6 +7,7 @@ pid_t fork() {
         return -1;   // fork failed (only parent exists)
 
     // 2. Copy parent's execution context
+<<<<<<< HEAD
     child.memory      = copy_on_write(parent.memory); //only user_space
     child.registers   = parent.registers;
     child.stack       = parent.stack;
@@ -22,6 +23,12 @@ pid_t fork() {
 
     Pipe buffer
 */
+=======
+    child.memory      = copy_on_write(parent.memory);
+    child.registers   = parent.registers;
+    child.stack       = parent.stack;
+    child.program_ctr = parent.program_ctr + 1;
+>>>>>>> 981fe96f5bd74891b42b1f36e81e31547d541f42
 
     // 3. Assign process IDs
     child.pid  = new_pid();

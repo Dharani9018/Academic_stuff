@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .DATA
 	A:.WORD 1
 	B:.WORD 1
@@ -15,3 +16,22 @@
 	LDR R3,=C
 	STR R2,[R3]
 .END
+=======
+.DATA
+	A:.WORD 1
+	B:.WORD 1
+	C:.WORD 0
+.TEXT
+	LDR R0,=A
+	LDR R1,[R0]
+	LDR R0,=B
+	LDR R2,[R0]
+	ADD R1,R1,R2
+	LDR R2,[R0]
+	ADD R3,R2,R2,LSL #3
+	ADD R2,R3,R2,LSL #2
+	ADD R2,R1,R2
+	LDR R3,=C
+	STR R2,[R3]
+.END
+>>>>>>> 981fe96f5bd74891b42b1f36e81e31547d541f42

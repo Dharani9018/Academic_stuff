@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 MOV R0,#25
 MOV R1,#25
 LOOP:
@@ -5,3 +6,12 @@ LOOP:
     SUBGT R0,R0,R1
     SUBLT R1,R1,R0
     BNE LOOP
+=======
+MOV R0,#25
+MOV R1,#25
+LOOP:
+    CMP R0,R1
+    SUBGT R0,R0,R1
+    SUBLT R1,R1,R0
+    BNE LOOP
+>>>>>>> 981fe96f5bd74891b42b1f36e81e31547d541f42

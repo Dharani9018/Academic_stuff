@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 .TEXT
 MOV R0, #2
 RSB R1, R0, #0
 SWI 0X11
+=======
+.TEXT
+MOV R0, #2
+RSB R1, R0, #0
+SWI 0X11
+>>>>>>> 981fe96f5bd74891b42b1f36e81e31547d541f42

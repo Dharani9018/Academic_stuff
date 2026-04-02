@@ -9,8 +9,12 @@ int main()
 
     printf("Enter the number of processes (max 10):");
     scanf("%d", &n);
+<<<<<<< HEAD
     if (n > 10 || n < 1)
     {
+=======
+    if (n > 10 || n < 1) {
+>>>>>>> 981fe96f5bd74891b42b1f36e81e31547d541f42
         printf("Invalid number of processes.\n");
         return 1;
     }
@@ -23,7 +27,11 @@ int main()
 
     // Sort by arrival time (bubble sort, stable)
     for (int i = 0; i < n-1; i++)
+<<<<<<< HEAD
         for (int j = 0; j < n-i-1; j++) 
+=======
+        for (int j = 0; j < n-i-1; j++)
+>>>>>>> 981fe96f5bd74891b42b1f36e81e31547d541f42
             if (arr[j] > arr[j+1])
             {
                 // Swap arrival

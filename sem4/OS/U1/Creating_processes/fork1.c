@@ -21,5 +21,9 @@ int main()
   else
   {
     printf("Fork failed\n");
+<<<<<<< HEAD
+=======
+
+>>>>>>> 981fe96f5bd74891b42b1f36e81e31547d541f42
   }
 }
