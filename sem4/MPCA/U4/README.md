@@ -198,10 +198,10 @@ graph TD
 
 ```mermaid
 graph TD
-    style Cluster fill:#1a252f,color:#fff
-    style SMP1 fill:#2c3e50,color:#fff
-    style SMP2 fill:#2c3e50,color:#fff
-    style NET fill:#f39c12,color:#fff
+    style Cluster fill:#2a3b0,color:#fff
+    style SMP1 fill:#4a6a85,color:#fff
+    style SMP2 fill:#3d5a73,color:#fff
+    style NET fill:#f0b27a,color:#2c3e50
 
     subgraph SMP1[SMP Node 1 - Shared Memory]
         C1[CPU 1] <--> SM1[Shared Mem]
@@ -233,11 +233,11 @@ graph TD
 
 ```mermaid
 graph TD
-    style FLYNNS fill:#1a1a2e,color:#fff
-    style SISD fill:#e74c3c,color:#fff
-    style SIMD fill:#2980b9,color:#fff
-    style MISD fill:#7f8c8d,color:#fff
-    style MIMD fill:#27ae60,color:#fff
+    style FLYNNS fill:#f5f7fa,color:#2c3e50
+    style SISD fill:#f49c9a,color:#fff
+    style SIMD fill:#7fb3d5,color:#fff
+    style MISD fill:#b0bec5,color:#2c3e50
+    style MIMD fill:#7dcea0,color:#fff
 
     FLYNNS[Flynn's Taxonomy] --> SISD[SISD\nSingle Instruction\nSingle Data]
     FLYNNS --> SIMD[SIMD\nSingle Instruction\nMultiple Data]
@@ -557,6 +557,11 @@ sequenceDiagram
     participant C2 as Core 2 Cache
     participant MEM as Memory
 
+    style
+fff
+fff
+fff
+fff
     C1->>BUS: WRITE X=10 (broadcasts)
     BUS->>C2: Invalidate X!
     C2->>C2: Mark X as invalid
@@ -711,9 +716,9 @@ After 2003, single-core performance stagnated due to power/heat limits. The solu
 
 ```mermaid
 graph LR
-    style CPU fill:#2c3e50,color:#fff
-    style GPU fill:#8e44ad,color:#fff
-    style PCIE fill:#e74c3c,color:#fff
+    style CPU fill:#3a546d,color:#fff
+    style GPU fill:#a37cba,color:#fff
+    style PCIE fill:#f4a261,color:#fff
 
     CPU[🖥️ CPU\nSequential Logic\nComplex Control Flow\nOS & I/O] <-->|PCIe Bus\n8-16 GB/s| PCIE[PCIe Interface]
     PCIE <-->|NVLINK\n40 GB/s| GPU[🎮 GPU\nParallel Computation\nImage/Matrix Processing\nThousands of threads]
@@ -729,11 +734,11 @@ graph LR
 
 ```mermaid
 graph TD
-    style GPU fill:#1a1a2e,color:#fff
-    style SM1 fill:#16213e,color:#fff
-    style SM2 fill:#16213e,color:#fff
-    style GM fill:#0f3460,color:#fff
-    style L2 fill:#533483,color:#fff
+    style GPU fill:#f0f4f8,color:#1a2b3e
+    style SM1 fill:#f48882,color:#fff
+    style SM2 fill:#f6a57e,color:#fff
+    style GM fill:#85c7b6,color:#1a2b3e
+    style L2 fill:#7aa5c2,color:#fff
 
     GPU[GPU Chip]
     GPU --> SM1[SM 1\nStreaming Multiprocessor\n32 CUDA Cores\nShared Mem + L1 Cache]
@@ -986,7 +991,6 @@ graph LR
 
 ## 13. Cache Coherence
 
-*(Expanded from Section 7 for exam completeness)*
 
 ### The Problem
 When multiple processors cache the same memory location and one modifies it, others have **stale (outdated) copies**.
@@ -1197,11 +1201,11 @@ for (i = 1; i < N; i++) {
 
 ```mermaid
 graph TD
-    style PC fill:#1a1a2e,color:#fff
-    style MEM fill:#16213e,color:#fff
-    style ILP fill:#0f3460,color:#fff
-    style GPU fill:#533483,color:#fff
-    style PERF fill:#e94560,color:#fff
+    style PC fill:#6c91b6,color:#fff
+    style MEM fill:#5d7a9e,color:#fff
+    style ILP fill:#7d93b5,color:#fff
+    style GPU fill:#b07dce,color:#fff
+    style PERF fill:#f28b82,color:#fff
 
     PC[Parallel Computing] --> MEM[Memory Architectures\nShared / Distributed / Hybrid]
     PC --> ILP[ILP Techniques\nPipeline / Superscalar / OOO / VLIW]
@@ -1214,6 +1218,3 @@ graph TD
 ```
 
 ---
-
-*Notes compiled from MPCA Unit 4 lectures (Sessions 4.1–4.9) | PES University UE24CS251B*
-*All topics from question bank covered: Flynn's Taxonomy, Memory Architectures, Amdahl/Gustafson, OpenMP, Cache Coherence, TLB, ILP, GPU Computing, TPU/ML Architectures*
