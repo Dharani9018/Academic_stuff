@@ -1126,49 +1126,6 @@ LAST-ACK
 CLOSED
 ```
 
-### All TCP States - Complete Diagram
-
-```
-CLOSED
-  |
-  ├─ passive open ──────────→ LISTEN
-  |                              |
-  ├─ active open, send SYN ──→ SYN-SENT ──┐
-                                  |         |
-                                  |         |
-              receive SYN,        |         | receive SYN+ACK,
-              send SYN+ACK        |         | send ACK
-                                  ↓         ↓
-                            SYN-RECEIVED  ESTABLISHED ←──────┐
-                                  |            |             |
-                                  |            |             |
-                          receive ACK          |             |
-                                  |            |             |
-                                  └────────────┘             |
-                                                             |
-                                                             |
-                               close or timeout              |
-                                     ↓                       |
-                                 FIN-WAIT-1                  |
-                                     |                       |
-                         receive ACK of FIN                  |
-                                     ↓                       |
-                                 FIN-WAIT-2                  |
-                                     |                       |
-                              receive FIN                    |
-                              send ACK                       |
-                                     ↓                       |
-                                TIME-WAIT                    |
-                                     |                       |
-                               timeout (2MSL)                |
-                                     ↓                       |
-                                  CLOSED                     |
-                                                             |
-             Passive close path:                             |
-             ESTABLISHED ──→ CLOSE-WAIT ──→ LAST-ACK ───────┘
-                (recv FIN,    (app close,   (recv ACK)
-                 send ACK)     send FIN)
-```
 
 ### Why TIME-WAIT State?
 

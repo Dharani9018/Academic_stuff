@@ -36,7 +36,7 @@ void display()
 
 int *bfs(int v)
 {
-    f = 0; 
+    f =  0; 
     r = -1;
 
     int *visited = calloc(MAX, sizeof(int));
